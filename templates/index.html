@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NewPassword</title>
+    <!-- Link to the styles.css here -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- Active search script-->
+      <script src="https://unpkg.com/htmx.org@1.9.5"></script>
+</head>
+<body>
+    <div class="content">
+        <h1>Your password is weak</h1>
+        <br>
+        <form action="new_password" method="POST">
+            <textarea value="{{ password }}" rows="1" type="text" class="input" name="password" hx-get="/new_password" hx-trigger="keyup changed delay:500ms" hx-target="#message"></textarea>
+            <br>
+            <div id="message">
+            </div>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+</html>
